@@ -143,7 +143,4 @@ function [isMultipath, L2, L1] = GLRT_MultipathDetection(X, M, d, lambda, N)
     isMultipath = (L1 > L2);  % Multipath is detected if the single target model has higher likelihood
 end
 
-% Function to generate steering vector for a given angle
-function a_theta = steering_vector(M, d, lambda, theta)
-    a_theta = exp(-1j * 2 * pi * d * (0:M-1).' * sin(theta * pi / 180) / lambda);
-end
+
